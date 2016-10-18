@@ -1,2 +1,2 @@
 # YSLoopBanner
-An
+An Infinite loop scrollView for banner.
