@@ -13,6 +13,7 @@
 		5245F3BF1DB5D52200E8F033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5245F3BD1DB5D52200E8F033 /* Main.storyboard */; };
 		5245F3C11DB5D52200E8F033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5245F3C01DB5D52200E8F033 /* Assets.xcassets */; };
 		5245F3C41DB5D52200E8F033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5245F3C21DB5D52200E8F033 /* LaunchScreen.storyboard */; };
+		5245F3CE1DB5D56E00E8F033 /* YSLoopBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5245F3CD1DB5D56E00E8F033 /* YSLoopBanner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		5245F3C01DB5D52200E8F033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5245F3C31DB5D52200E8F033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5245F3C51DB5D52200E8F033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5245F3CC1DB5D56E00E8F033 /* YSLoopBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLoopBanner.h; sourceTree = "<group>"; };
+		5245F3CD1DB5D56E00E8F033 /* YSLoopBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLoopBanner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		5245F3B31DB5D52200E8F033 /* YSLoopBannerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5245F3CB1DB5D56E00E8F033 /* LoopBanner */,
 				5245F3B71DB5D52200E8F033 /* AppDelegate.h */,
 				5245F3B81DB5D52200E8F033 /* AppDelegate.m */,
 				5245F3BA1DB5D52200E8F033 /* ViewController.h */,
@@ -77,6 +81,15 @@
 				5245F3B51DB5D52200E8F033 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5245F3CB1DB5D56E00E8F033 /* LoopBanner */ = {
+			isa = PBXGroup;
+			children = (
+				5245F3CC1DB5D56E00E8F033 /* YSLoopBanner.h */,
+				5245F3CD1DB5D56E00E8F033 /* YSLoopBanner.m */,
+			);
+			path = LoopBanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5245F3BC1DB5D52200E8F033 /* ViewController.m in Sources */,
+				5245F3CE1DB5D56E00E8F033 /* YSLoopBanner.m in Sources */,
 				5245F3B91DB5D52200E8F033 /* AppDelegate.m in Sources */,
 				5245F3B61DB5D52200E8F033 /* main.m in Sources */,
 			);

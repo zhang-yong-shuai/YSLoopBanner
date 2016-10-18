@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "YSLoopBanner.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    YSLoopBanner *loop = [[YSLoopBanner alloc] initWithFrame:CGRectMake(0, 100, 200, 200) scrollDuration:3.f];
+    [self.view addSubview:loop];
+    loop.imageURLStrings = @[@"1.jpg", @"2.jpg", @"3.jpg"];
+    loop.clickAction = ^(NSInteger index) {
+        NSLog(@"curIndex: %ld", index);
+    };
 }
 
 
