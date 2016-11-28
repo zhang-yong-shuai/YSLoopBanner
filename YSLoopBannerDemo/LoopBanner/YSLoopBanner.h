@@ -6,16 +6,18 @@
 //  Copyright © 2016年 张永帅. All rights reserved.
 //
 
-/** 无限循环轮播图：只使用三个imageView实现 */
+/** 
+ *  Infinite loop banner：only use three imageViews 
+ */
 
 #import <UIKit/UIKit.h>
 
 @interface YSLoopBanner : UIView
 
-/** click action */
+/// click action
 @property (nonatomic, copy) void (^clickAction) (NSInteger curIndex) ;
 
-/** data source */
+/// data source
 @property (nonatomic, copy) NSArray *imageURLStrings;
 
 

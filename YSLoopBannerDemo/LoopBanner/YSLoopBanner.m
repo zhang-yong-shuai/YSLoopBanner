@@ -19,10 +19,10 @@
 
 @property (nonatomic, assign) NSInteger curIndex;
 
-/** scroll timer */
+/// scroll timer
 @property (nonatomic, strong) NSTimer *scrollTimer;
 
-/** scroll duration */
+/// scroll duration
 @property (nonatomic, assign) NSTimeInterval scrollDuration;
 
 @end
@@ -94,7 +94,7 @@
     [self setScrollViewContentOffsetCenter];
 }
 
-#pragma mark - 把scrollView偏移到中心位置
+#pragma mark - set scrollView contentOffset to center
 - (void)setScrollViewContentOffsetCenter {
     self.scrollView.contentOffset = CGPointMake(CGRectGetWidth(self.scrollView.bounds), 0);
 }
@@ -201,12 +201,13 @@
         NSInteger leftIndex = (curIndex + imageCount - 1) % imageCount;
         NSInteger rightIndex= (curIndex + 1) % imageCount;
         
+        // TODO: if need use image from server, can import SDWebImage SDK and modify the codes below.
         // fill image
         self.leftImageView.image = [UIImage imageNamed:self.imageURLStrings[leftIndex]];
         self.middleImageView.image = [UIImage imageNamed:self.imageURLStrings[curIndex]];
         self.rightImageView.image = [UIImage imageNamed:self.imageURLStrings[rightIndex]];
         
-        // 每次滚动后，都需要将当前页移动到中间位置
+        // every scrolled, move current page to center
         [self setScrollViewContentOffsetCenter];
         
         self.pageControl.currentPage = curIndex;
@@ -218,13 +219,14 @@
     if (self.imageURLStrings && self.imageURLStrings.count > 0) {
         CGFloat pointX = self.scrollView.contentOffset.x;
         
-        // 临界值判断，第一个和第三个imageView的contentoffset
+        // judge critical value，first and third imageView's contentoffset
         CGFloat criticalValue = .2f;
         
-        // 向右滑动，右侧临界值的判断
+        // scroll right, judge right critical value
         if (pointX > 2 * CGRectGetWidth(self.scrollView.bounds) - criticalValue) {
             self.curIndex = (self.curIndex + 1) % self.imageURLStrings.count;
-        } else if (pointX < criticalValue) {// 向左滑动，左侧临界值的判断
+        } else if (pointX < criticalValue) {
+            // scroll left，judge left critical value
             self.curIndex = (self.curIndex + self.imageURLStrings.count - 1) % self.imageURLStrings.count;
         }
     }
@@ -253,7 +255,8 @@
 
 #pragma mark - timer action
 - (void)scrollTimerDidFired:(NSTimer *)timer {
-    // 矫正imageView的frame：因为定时器的自动滚动，可能导致轮播图一页显示两张图片的情况
+    // correct the imageview's frame, because after every auto scroll,
+    // may show two images in one page
     CGFloat criticalValue = .2f;
     if (self.scrollView.contentOffset.x < CGRectGetWidth(self.scrollView.bounds) - criticalValue || self.scrollView.contentOffset.x > CGRectGetWidth(self.scrollView.bounds) + criticalValue) {
         [self setScrollViewContentOffsetCenter];
